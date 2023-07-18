@@ -1,0 +1,372 @@
+---
+title: "Changelog"
+description: "A log of all notable changes to Activepieces"
+---
+
+Semantic versioning is a standardized way of versioning software projects. It uses a three-part version number in the format `X.Y.Z`, where:
+
+**X** is the major version number, which is incremented for significant or breaking changes to the software.<br />
+**Y** is the minor version number, which is incremented for new features or functionality that is backwards-compatible with the previous version.<br />
+**Z** is the patch number, which is incremented for bug fixes and other small changes that do not add new features or break backwards compatibility.
+
+<Note>You will only see Version X.Y here as all Patch changes (Z) are added under their minor versions.</Note>
+
+### 04/02/2023
+
+<Tip>
+Please upgrade your instance to ensure that you can see the latest pieces, as some new pieces may not be compatible with older versions.
+</Tip>
+
+**Pieces:**
+- SendinBlue: Create or Update Contacts Action
+- Constant Contact: Create or Update Contact
+- Salesforce: New Record / Updated Record Trigger
+- Shopify: New Cancelled Order / New Customer / New Paid Order / New Order Trigger
+- Mastodon: Post Status Action
+- Mattermost: Send Message to Channel
+- Google Sheets: Delete Row Action
+- SMTP Piece: Send Email
+- MailerLite: Create or Update Subscriber
+- Zendesk: New Ticket in View
+- ZohoCrm: New Contact Trigger
+- Sendgrid: Send Dynamic Template Email Action
+
+**Enhancements:**
+- Pieces now have authentication instructions without the need to refer to the documentation.
+- Polling Triggers now have a test button to get the most recent items.
+- Collection statuses now appear in the main dashboard to know whether they are published or not.
+
+**Bug Fixes:**
+- Polling triggers used to run sequentially; now they are concurrent by configurable environment variable.
+- Branch Conditions "Exists" and "Does not Exist" are now working.
+- Gmail Piece: Search Email used to take a long time; now it returns one email.
+- OAuth2: Sometimes the OAuth2 connection popup closes suddenly due to extensions sending browser events. This is now fixed.
+
+**Chore:**
+- Added polling library for contributors.
+- Added custom authentication property in piece framework.
+
+**Contributors**
+* @Willianwg created MailerLite
+* @kanarelo created SendInBlue.
+* @abaza738 created SMTP piece.
+
+**Full Changelog:**
+https://github.com/activepieces/activepieces/compare/0.3.8...0.3.9
+
+### 03/27/2023
+
+<Tip>
+Please upgrade your instance to ensure that you can see the latest pieces as some new pieces may not be compatible with older versions.
+</Tip>
+
+**Enhancements:**
+- Simple Scheduler Piece (Every Hour / Every Day / Every Week / Cron Expression)
+- Loops Piece
+- Remove Accordions from Edit Step Panel
+
+**Bug Fixes:**
+- New pieces version that require new version of activepieces will no longer shows.
+- Allowing multiple versions of the same piece in the flow.
+- Webhook URL is no longer truncated when it's too long.
+
+**Chore:**
+- Validation pipeline to make sure version is incremented when modify existing piece.
+- Dervie the piece code name from the package name, so avoid possible bugs.
+
+**Full Changelog:**
+https://github.com/activepieces/activepieces/compare/0.3.7...0.3.8
+
+### 03/16/2023
+
+**New Pieces:**
+- OpenAI: Additional optional parameters have been added.
+- Airtable: Create Record Action.
+- Square: New Customer / Customer Updated / New Payment / New Order / Order Updated / New Booking / New Invoice Triggers.
+- Intercom: Create Contact / Create Or Get Contact / Send Message Actions.
+- Delay: An action that introduces a delay of up to 5 minutes.
+- Data Mapper: An advanced mapping action that allows mapping between two objects in a JSON editor where autocomplete is available.
+
+
+**Enhancements:**
+- Webhooks trigger now simulates real testing, including fetching real sample data.
+- Deploy to Easypanel documentation has been added.
+- All pieces are now versioned, ensuring that your running flows are safe from changes.
+- All pieces are now published to [npm](https://www.npmjs.com/search?q=%40activepieces).
+- Pieces will be automatically released to the registry without new releases.
+
+**Bug Fixes:**
+- Clickup: New connections no longer fail.
+- Youtube: Livestream videos no longer get triggered twice.
+- Deploy.sh script now works on MacOS.
+- Intercom: Create Contact Action / Create or Get Contact Action / Send Message Action.
+
+**Contributors:**
+- @astorozhevsky added OpenAI additional variables.
+- @J0LGER encoded code variable in malicious redirection by third party.
+- @veverkap fixed a typo in the frontend.
+- @berksmbl documented Easy Panel deployment.
+- @kanarelo created Airtable new record.
+
+**Full Changelog:**
+https://github.com/activepieces/activepieces/compare/0.3.6...0.3.7
+
+### 03/09/2023
+
+<Warning>
+**Breaking Changes:** The feature of having configurations in collections has been removed for the time being. However, we plan to reintroduce it in a different form at a later stage. Currently, the workaround is to have a code piece that returns the configurations and use it in other places.
+</Warning>
+
+
+**New Features:**
+- Gmail: New Email Trigger / Get Email Id / Search Emails
+- ClickUp: Task Created / Task Updated / Task Deleted / Task Comment posted  / Task Comment Updated
+- Youtube: New Youtube Video
+- Trello: Create Card / Get Card
+- Blackbaud: Create Contacts Batch / Update Contact / Search Contact After Certain Date.
+- Branching: Condontional Branching
+
+**Enhancements:**
+- Webhooks Supports all http types.
+- Flow Canvas supports Zoom In / Out and Panning
+
+**Bug Fixes:**
+- GenerateBanners: docs are fixed now.
+
+**Contributors:**
+- @kanarelo created gmail & clickup triggers.
+- @abaza738 created youtube trigger
+- @ShayPunter created trello
+
+**Full Changelog:** https://github.com/activepieces/activepieces/compare/0.3.5...0.3.6
+
+### 03/06/2023
+**Version 0.3.5** 
+
+**New Features:**
+- GenerateBanner: This feature allows users to generate an image from a template.
+- OpenAI: The Chat GPT API has been added for OpenAI support.
+
+**Enhancements:**
+
+- Webhooks: The webhooks now support all types of HTTP methods, including GET, POST, and OPTIONS.
+- OAuth2 with PKCE: The new release now supports OAuth2 with PKCE for apps.
+- Backend Port 3000 is no longer required in docker compose.
+
+**Bug Fixes:**
+
+- Completed Runs Removal: Completed runs are now successfully removed from Redis.
+- Raspberry PI: The Activepieces now works on Raspberry PI.
+- Previously, clicking would always set the cursor to the end of the input, but now this issue has been fixed.
+
+
+**Contributors:**
+
+- @tpatel created the GenerateBanner piece.
+- @creed983 updated chatgpt model.
+
+**Full Changelog:** https://github.com/activepieces/activepieces/compare/0.3.4...0.3.5
+
+
+### 03/01/2023
+**Version 0.3.4** 
+
+* **Pieces:**
+  - BannerBear: generate template
+  - ClickUp: create task / post comment on task
+  - RSS: Now support ATOM feeds
+  - CSV: Convert CSV to JSON / Convert JSON to CSV (New)
+  - FreshSales: Create Contact (New)
+
+* **Features/Enhancements:**
+  - Dynamic Properties in Pieces Framework.
+  - Properties in Pieces can have default value now
+  - Code pieces now support Typescript :partying_face:
+  - Add badge for the trigger to know if it's polling or webhook.
+  - Webhooks now have flow id as path variable and not query param.
+
+* **Fixes:**
+  - Storage and HTTP pieces moved to the core tab.
+  - Flow no longer throttled sequentially
+
+* **Contributors:**
+  - @kanarelo: freshsales / csv / banner bear
+  - @ShayPunter: Enriched Clickup piece
+  - @fomojola made their first contribution in https://github.com/activepieces/activepieces/pull/664
+
+### 02/22/2023
+**Version 0.3.3** (0.3.2 with hotfix) [GitHub](https://github.com/activepieces/activepieces/pull/583)
+
+<Warning>
+**Breaking Changes:** You need to configure `AP_ENCRYPTION_KEY`, and merged activepieces docker images into one. Please ensure that your `docker-compose.yml` is up to date as well. 
+</Warning>
+
+* **Pieces:**
+    - Figma: Includes actions for getting file, getting comments, posting comments, and triggering new comments
+    - Cal.Com: Includes triggers for cancelled bookings, created bookings, and rescheduled bookings
+    - RSS: Includes a trigger for new items in the feed
+    - Clickup: Includes actions for getting lists, creating folderless lists, getting tasks, getting task comments, and getting spaces actions
+    - Wordpress: Includes actions for creating Wordpress posts and triggering new Wordpress posts
+    - Github: Includes triggers for new pull requests and new issues
+    - Posthog: Includes actions for capture events / creating project
+    - Google Tasks: Includes actions for creating task
+
+* **Features:**
+    - Auto Complete styling fixes
+    - Multi select option added
+    - App connections are now encrypted
+* **Fixes:**
+    - Added full sample for Google Calendar
+
+* **Contributors**
+    - @kanarelo: Enriched Github, created Posthog and Cal.Com pieces
+    - @ShayPunter: Enriched Clickup piece
+    - @abaza738: Created RSS feed trigger and Google Tasks piece
+    - @jonaboe: Created Figma piece
+
+
+### 02/15/2023
+**Version 0.3.1** [GitHub](https://github.com/activepieces/activepieces/pull/583)
+
+<Warning>
+**Breaking Changes:** The webhook URL is now constructed from `AP_FRONTEND_URL`. Please ensure that your `docker-compose.yml` is up to date as well. 
+</Warning>
+
+* **Pieces:**
+    - Dropbox: Create File from Text / Create Folder
+    - Google Drive: Create File From Text / Create Folder
+    - Airtable: New Record
+
+* **Features:**
+    - Added Docuemntation link in Trigger / Action, So you can easily open the documenation.
+    - Created deployment scripts that generate database crednenetials
+    - Add upgrade notification inside the app to be notified
+
+* **Fixes:**
+    - Login now accepts password longer than 25 characters.
+    - Fix refreshing oauth2, sometime they failed due to bug in isExpired method.
+    - Flow worker concurency were set to 1 flow, now it's 10 by default.
+    - Reorded http methods and remove connect due it to error it make
+
+* **Contributors**
+    - @kanarelo created Dropbox and Google Drive Pieces
+
+
+### 02/08/2023
+**Version 0.3.0** [GitHub](https://github.com/activepieces/activepieces/pull/508)
+
+* **Pieces:**
+    - Twilio: Send SMS / New Incoming SMS
+    - Todoist: Completed Task Trigger
+
+* **Features:**
+    - Add Basic Authentication Property to piece framework.
+    - Add request piece button when it's not found
+    - Add In give feedback from builder
+
+* **Fixes:**
+    - Delete Instance in API will also delete schedule now.
+
+* **Security:**
+    - [Snyk] Security upgrade nginx from 1.17.1-alpine to 1.23.3-alpine by @snyk-bot in https://github.com/activepieces/activepieces/pull/474
+    - [Snyk] Security upgrade node from 18.13.0-bullseye to 18.13-bullseye-slim by @snyk-bot in https://github.com/activepieces/activepieces/pull/473
+    - Code piece exposing environment variables is fixed.
+
+* **New Contributors**
+    - M-Arman as a security contributor for penetration testing code piece.
+
+* **Full Changelog**
+https://github.com/activepieces/activepieces/compare/0.2.5...0.3.0
+
+### 02/04/2023
+**Version 0.2.5** ([GitHub](https://github.com/activepieces/activepieces/pull/469))
+
+<Info>A big shoutout to Osama Haikal, Kanarelo for zoom & calendar pieces</Info>
+
+* **Pieces:**
+    - Google Calendar: Create Quick Event / New Event
+    - Zoom: Create new Meeting Action / New Meeting Registrant
+    - Todoist: Create Task Action
+
+* **Features:**
+    - Add Enable Sign up Environment Variable
+    - **Breaking Change**: Webhook Trigger now returns object contains body, headers and query params.
+
+* **Fixes:**
+    - Mailchimp: the dropdown options weren't loading.
+
+### 02/01/2023
+**Version 0.2.4** ([GitHub](https://github.com/activepieces/activepieces/pull/431))
+
+<Info>A big shoutout to Creed983, ShahedAlMashni for their contributions to Discord and Typeform pieces</Info>
+
+* **Pieces:**
+    - Discord: Send Message via Webhooks
+    - Drip: New Subscriber / New Tag
+    - Click Up: Create Task
+    - Telegram Bot: Send Message
+    - Google Contacts: New or Updated Contacts
+    - Asana: Create Task
+    - Calendly Piece: Invitee Created / Canceled
+    - Stripe: New Customer Subscription
+    - Typeform: New Form Entry
+    - Hubspot: Create Or Update Contact / Add Contact to List
+    - HTTP Piece
+
+* **Features:**
+    - JSON Property for Actions
+    - Improved UI/UX for Auto Complete
+    - Authorization for Project Resources - each user accesses their own resources
+
+* **Fixes:**
+    - Schedules are now automatically deleted when the flow is deleted
+
+
+### 01/23/2023
+**Version 0.2.X** ([GitHub](https://github.com/activepieces/activepieces/pull/328))
+
+* **Pieces:**
+    * Google Sheets: Insert new Row Action / New Row Trigger
+    * Send Grid: Send Email Action
+    * Google Contact: Add Contact Action
+    * MailChimp: New Subscriber Trigger.
+    * Stripe: New Payment Trigger / New Customer Trigger / Payment Failed Trigger
+    * Pipedrive: New Person Trigger / New Deal Trigger / Updated Person Trigger / Updated Deal Trigger / Add Person Action
+    * Blackbaud: Insert Contacts Action / List Contacts Action
+
+* **Features:**
+    * App Connections are centralized in project dashboard.
+    * API Key are now considered connections instead of short text.
+    * Auto Complete for variables.
+    * Test Flow suggest sample data for app triggers.
+
+* **Fixes:**
+    * Full screen Code Editor is Fixed.
+    * Triggers schedule now get deleted when the collection is deleted.
+    * Trigger / Action logs is streamed to backend logs now.
+
+### 01/09/2023
+**Version 0.1.X** ([GitHub](https://github.com/activepieces/activepieces/pull/244)) [0.1.2](https://github.com/activepieces/activepieces/pull/301)
+
+<Info>A big shoutout to Abdurahaman Zeineddin for their contributions to OpenAI and Google Cloud Vision!</Info>
+
+* **Pieces:**
+    * HubSpot: Add Contact Action Added.
+    * Hacker News: Get Top X Stories Action Added.
+    * Google Cloud Vision: Get Text from PDF
+    * Open AI: Ask Chat GPT
+    * MailChimp: Add Member To List Action Added.
+
+* **Documentation:**
+    * Tutorial for creating first piece added.
+    * Auto generate documentation for pieces.
+    * Documentation structure revamped.
+
+* **Fixes:**
+    * Breaking change: send http request wrapper now returns body,headers,status instead of body only.
+    * Webhook Trigger fixed.
+    * Fullscreen code editor issue fixed, It wasn't loading.
+    * Webhook Url and Redirect url fixed on demo instance.
+    * JWT Security key can now be supplied by environment variable or auto generated.
+    * Docker Image now works on ARM architecture (MacOS).
+    * Dev Container now works on ARM architecture (MacOS).
